@@ -3,6 +3,14 @@ sleep 1
 
 cd /home/container
 
+if [ -f "/home/container/allocated_port.txt" ]; then
+    ALLOCATED_PORT=$(cat /home/container/allocated_port.txt)
+    echo "Using allocated port: $ALLOCATED_PORT"
+    export SERVER_PORT=$ALLOCATED_PORT
+else
+    echo "No allocated port found, using default SERVER_PORT"
+fi
+
 # Fix SteamCMD Warnings
 if [ ! -f "./steam/linux32/steamservice.so" ]; then
     cd /home/container/steam/linux32
