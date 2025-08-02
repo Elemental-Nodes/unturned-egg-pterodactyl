@@ -33,6 +33,6 @@ find_available_port() {
 }
 
 
-AVAILABLE_PORT=$(find_available_port)
-echo "Allocated port -> $AVAILABLE_PORT"
-echo $AVAILABLE_PORT > /mnt/server/allocated_port.txt
+SECOND_PORT=$(find_available_port)
+echo "Allocated port -> $SECOND_PORT"
+echo $SECOND_PORT > /mnt/server/allocated_port.txt
