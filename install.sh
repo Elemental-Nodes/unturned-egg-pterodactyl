@@ -19,17 +19,20 @@ touch /mnt/server/Servers/unturned/Server/Commands.dat
 find_available_port() {
     local start_port=27000
     local end_port=27300
-
-    for ((port=start_port; port<=end_port; port++)); do
-        if ! nc -z 127.0.0.1 $port 2>/dev/null; then
+    local port=$start_port
+    
+    while [ $port -le $end_port ]; do
+        if ! ss -tuln | grep -q ":$port "; then
             echo $port
             return 0
         fi
+        port=$((port + 1))
     done
-
-    return 1
+    
+    echo $start_port
 }
 
+
 AVAILABLE_PORT=$(find_available_port)
-echo "Allocated port: $AVAILABLE_PORT"
+echo "Allocated port -> $AVAILABLE_PORT"
 echo $AVAILABLE_PORT > /mnt/server/allocated_port.txt
