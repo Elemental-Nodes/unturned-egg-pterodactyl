@@ -19,17 +19,14 @@ touch /mnt/server/Servers/unturned/Server/Commands.dat
 find_available_port() {
     local start_port=27000
     local end_port=27300
-    local port=$start_port
-    
-    while [ $port -le $end_port ]; do
-        if ! nc -z localhost $port 2>/dev/null; then
+
+    for ((port=start_port; port<=end_port; port++)); do
+        if ! nc -z 127.0.0.1 $port 2>/dev/null; then
             echo $port
             return 0
         fi
-        port=$((port + 1))
     done
-    
-    echo 27000
+
     return 1
 }
 
