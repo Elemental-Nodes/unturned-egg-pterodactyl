@@ -143,24 +143,6 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|string|max:60"
-    },
-    {
-      "name": "Port Range Start",
-      "description": "Start of the port range for automatic port allocation (27000-27300)",
-      "env_variable": "PORT_RANGE_START",
-      "default_value": "27000",
-      "user_viewable": false,
-      "user_editable": false,
-      "rules": "required|integer|between:1024,65535"
-    },
-    {
-      "name": "Port Range End",
-      "description": "End of the port range for automatic port allocation (27000-27300)",
-      "env_variable": "PORT_RANGE_END",
-      "default_value": "27300",
-      "user_viewable": false,
-      "user_editable": false,
-      "rules": "required|integer|between:1024,65535"
     }
   ]
 }

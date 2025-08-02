@@ -17,8 +17,8 @@ mkdir -p /mnt/server/Servers/unturned/Server
 touch /mnt/server/Servers/unturned/Server/Commands.dat
 
 find_available_port() {
-    local start_port=${PORT_RANGE_START:-27000}
-    local end_port=${PORT_RANGE_END:-27300}
+    local start_port=27000
+    local end_port=27300
     local port=$start_port
     
     while [ $port -le $end_port ]; do
@@ -29,7 +29,7 @@ find_available_port() {
         port=$((port + 1))
     done
     
-    echo 27015
+    echo 27000
     return 1
 }
 
