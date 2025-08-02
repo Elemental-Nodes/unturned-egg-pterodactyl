@@ -12,7 +12,7 @@
     "steam_disk_space"
   ],
   "image": "griffindor30\/unturned-egg:latest",
-  "startup": ".\/Unturned_Headless.x86_64 -port {{SERVER_PORT}} -queryport {{SECOND_PORT}} -maxplayers {{MAX_PLAYERS}} -map \"{{SERVER_MAP}}\" -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name \"{{NAME}}\" -password {{PASSWORD}} -gslt {{STEAM_ACC}} -owner {{OWNER}} -welcome \"{{WELCOME}}\" +InternetServer\/{{SERVER_FOLDER}}",
+  "startup": ".\/Unturned_Headless.x86_64 -port {{SERVER_PORT}} -queryport {{QUERY_PORT}} -maxplayers {{MAX_PLAYERS}} -map \"{{SERVER_MAP}}\" -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name \"{{NAME}}\" -password {{PASSWORD}} -gslt {{STEAM_ACC}} -owner {{OWNER}} -welcome \"{{WELCOME}}\" +InternetServer\/{{SERVER_FOLDER}}",
   "config": {
     "files": "{}",
     "startup": "{\r\n    \"done\": \"Loading level: 100%\",\r\n    \"userInteraction\": []\r\n}",
@@ -145,9 +145,9 @@
       "rules": "required|string|max:60"
     },
     {
-      "name": "SECOND_PORT",
+      "name": "QUERY_PORT",
       "description": "Second port for Unturned query",
-      "env_variable": "SECOND_PORT",
+      "env_variable": "QUERY_PORT",
       "default_value": "27000",
       "user_viewable": false,
       "user_editable": false,

@@ -15,24 +15,3 @@ export HOME=/mnt/server
 
 mkdir -p /mnt/server/Servers/unturned/Server
 touch /mnt/server/Servers/unturned/Server/Commands.dat
-
-find_available_port() {
-    local start_port=27000
-    local end_port=27300
-    local port=$start_port
-    
-    while [ $port -le $end_port ]; do
-        if ! ss -tuln | grep -q ":$port "; then
-            echo $port
-            return 0
-        fi
-        port=$((port + 1))
-    done
-    
-    echo $start_port
-}
-
-
-SECOND_PORT=$(find_available_port)
-echo "Allocated port -> $SECOND_PORT"
-echo $SECOND_PORT > /mnt/server/allocated_port.txt
