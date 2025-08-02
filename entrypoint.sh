@@ -30,11 +30,7 @@ if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
     cp -r Extras/Rocket.Unturned Modules/
 fi
 
-if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
-    cd /home/container
-    wget https://trillionservers.com/unturned-egg/uScript.zip
-	unzip -o uScript.zip && rm uScript.zip
-fi
+
 
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
 cp -f steam/linux64/steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamclient.so
