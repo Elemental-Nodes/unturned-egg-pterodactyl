@@ -23,12 +23,10 @@ Just simply import `egg-unturned.json` to your panel and then you can create a s
 Head to the Issues Tab and open a issue and explain your issue please add screenshots and any errors you encounter while installing the Unturned Server using this egg.
 
 ## Credit
-This egg was modified by Griffindor and was originally made by hcgcloud.
+This egg was modified by JoeV2 and was originally edited by Griffindor and made by hcgcloud.
 
 ## Hosts Using this Egg
-Sparked Host - <https://sparkedhost.com/>
-
-Modern Hosting - <https://modernhosting.com/>
+Elemental Nodes - <https://elementalnodes.net/>
 
 Please Note: If you want to be added please open an issue or send me a dm in discord.
 
